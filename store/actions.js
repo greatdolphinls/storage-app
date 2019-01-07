@@ -14,6 +14,19 @@ export default {
         commit('ERROR', e)
       }
     },
+    async 'GET_VIDEOS'({commit}) {
+      try {
+        const videos = []
+        let response = await axios.get("/localVideos.json")
+        let responseData = response.data.data
+        for (let i in responseData) {
+          videos.unshift(responseData[i])
+        }
+        commit('SET_VIDEOS', videos)
+      } catch (e) {
+        commit('ERROR', e)
+      }
+    },
     async 'GET_VALUE_OF_IMAGE'({commit}, payload) {
       try {
         const images = []
@@ -25,6 +38,23 @@ export default {
         images.find(item => {
           if(item.id == payload) {
             commit('SET_VALUE_OF_IMAGE', item)
+          }
+        })
+      } catch (e) {
+        commit('ERROR', e)
+      }
+    },
+    async 'GET_VALUE_OF_VIDEO'({commit}, payload) {
+      try {
+        const videos = []
+        let response = await axios.get("/localVideos.json")
+        let responseData = response.data.data
+        for (let i in responseData) {
+          videos.unshift(responseData[i])
+        }
+        videos.find(item => {
+          if(item.id == payload) {
+            commit('SET_VALUE_OF_VIDEO', item)
           }
         })
       } catch (e) {
