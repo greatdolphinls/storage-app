@@ -16,6 +16,7 @@
     "build": "nuxt build && electron-builder"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^1.4.0"
   },
   "devDependencies": {

@@ -1,14 +1,8 @@
 <template>
 	<section class="container">
-		<div>
-			<img width="256" src="~/assets/img/logo.png">
+		<div class="main-page">
 			<h1>storage-app</h1>
-			<h2>Nuxt + Electron</h2>
-			<a href="https://nuxtjs.org/" target="_blank" class="btn btn-primary">Documentation</a>
-			<a href="https://github.com/nuxt/nuxt.js" target="_blank" class="btn btn-primary">GitHub</a>
-			<a href="https://electronjs.org/" target="_blank" class="btn btn-secondary">Electron</a>
-			<a href="https://github.com/electron-userland/electron-builder" target="_blank" class="btn btn-secondary">Electron Builder</a>
-		</div>
+			</div>
 	</section>
 </template>
 
@@ -18,12 +12,20 @@ export default {
 </script>
 
 <style scoped>
+.main-page{
+	width: 100%;
+	background-image:  url("http://r.ddmcdn.com/s_f/o_1/APL/uploads/2015/07/cecil-AP463227356214-1000x400.jpg");
+	background-repeat: no-repeat;
+}
+.main-page h1{
+	text-align: center;
+	padding-top: 50px;
+	font-size: 60px;
+	color: chartreuse;
+}
 .container {
 	min-height: 100vh;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
 }
 .btn {
 	margin: 0 8px;
