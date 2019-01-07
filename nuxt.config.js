@@ -17,6 +17,10 @@ module.exports = {
 			if (isClient) { config.target = 'electron-renderer' }
 		}
 	},
+	modules: [
+		'@nuxtjs/axios'
+	],
+	axios: {},
 	dev: process.env.NODE_ENV === 'DEV',
 	css: [
 		'@/assets/css/global.css'

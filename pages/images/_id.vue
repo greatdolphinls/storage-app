@@ -1,36 +1,29 @@
 <template>
   <div>
-    <h2>{{image.title}}</h2>
+    <h2>{{valueOfImage.title}}</h2>
     <div>
       <div class="col-sm-3">
         <span class="image">
-          <img :src="image.url" :width="450" alt>
+          <img :src="valueOfImage.url" :width="450" alt>
         </span>
       </div>
       <div class="col-sm-9">
-        <p>{{image.description}}</p>
+        <p>{{valueOfImage.description}}</p>
       </div>
     </div>
   </div>
-  
 </template>
 <script>
-import axios from "axios";
 export default {
-  asyncData() {
-    return axios.get("/localImages.json").then(res => {
-      console.log(res.data.data);
-      return { images: res.data.data };
-    });
+  async fetch({ store , params, route}) {
+    await store.dispatch("GET_VALUE_OF_IMAGE", route.params.id);
   },
   computed: {
-    id() {
-      return this.$route.params.id
-    },
-    image() {
-      return this.images[this.id - 1]
+    valueOfImage() {
+      return this.$store.getters.valueOfImage
+        ? this.$store.getters.valueOfImage
+        : [];
     }
   }
 }
 </script>
-

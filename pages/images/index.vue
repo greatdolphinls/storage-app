@@ -1,7 +1,7 @@
 <template>
   <div class="main-image">
     <p>images</p>
-    <article v-for="(image) in images" v-bind:value="image.value" :key="image.value">
+    <article v-for="(image) in $store.state.images" v-bind:value="image.value" :key="image.value">
       <div class="col-sm-3">
         <span class="image">
           <img :src="image.url" :width="150" alt>
@@ -25,11 +25,8 @@ export default {
     watching: false,
     images: null
   }),
-  asyncData() {
-    return axios.get("/localImages.json").then(res => {
-      console.log(res.data.data);
-      return { images: res.data.data };
-    });
+  async fetch ({ store, params }) {
+    await store.dispatch('GET_IMAGES');
   }
 };
 </script>
