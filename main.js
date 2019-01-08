@@ -24,12 +24,50 @@ console.log(`Nuxt working on ${_NUXT_URL_}`)
 /*
 ** Electron
 */
+const {app, BrowserWindow, ipcMain} = require('electron');
+const {download} = require('electron-dl');
+const path = require('path');
+const url = require('url');
+const fs = require('fs');
+
+ipcMain.on('download', (event, arg) => {
+	const dirPath = path.join(__dirname, 'server/files');
+	fileUrl = arg.url;
+  try {
+    fs.mkdirSync(dirPath);
+  } catch (e) {
+    console.log("path already exists");
+  }
+  
+	const opts = {
+    saveAs: false,
+    directory: dirPath,
+    openFolderWhenDone: false
+	};
+	
+	download(win, fileUrl, opts)
+		.then(dl => console.log(dl.getSavePath()))
+		.catch(console.error);
+  // Try to download a set of files I know exist
+  // [
+  //   "https://gist.githubusercontent.com/mbostock/4060606/raw/5bcd32917b5df7183f6737099a4c8590acb0f5fc/.block",
+  //   "https://gist.githubusercontent.com/mbostock/4060606/raw/f00e77314966d06cb56b1a46e776529b647d9552/README.md",
+  //   "https://gist.githubusercontent.com/mbostock/4060606/raw/9841cf6f5ba1e72ae8f9c689e8291ca2e942568a/index.html",
+  //   "https://gist.githubusercontent.com/mbostock/4060606/raw/3f2f45d819ae639f06f971881bd62d53e6dd6c28/thumbnail.png",
+  //   "https://gist.githubusercontent.com/mbostock/4060606/raw/dfc657a8d193fa47c56af0bd5e50606b18d171c9/unemployment.tsv"
+  // ].forEach((fileUrl) => {
+  //   console.log(fileUrl);
+  //   download(win, fileUrl, opts).then(dl => console.log(dl.getSavePath()))
+	// })
+})
+
 let win = null // Current window
-const electron = require('electron')
-const path = require('path')
-const app = electron.app
+// const electron = require('electron')
+// const path = require('path')
+// const app = electron.app
+
 const newWin = () => {
-	win = new electron.BrowserWindow({
+	win = new BrowserWindow({
 		icon: path.join(__dirname, 'static/icon.png')
 	})
 	win.maximize()

@@ -10,10 +10,14 @@
       <div class="col-sm-9">
         <p>{{valueOfImage.description}}</p>
       </div>
+      <button @click="download(valueOfImage.url)">
+        Download!
+      </button>
     </div>
   </div>
 </template>
 <script>
+import { ipcRenderer } from "electron";
 export default {
   async fetch({ store , params, route}) {
     console.log(route.params.id);
@@ -24,6 +28,13 @@ export default {
       return this.$store.getters.valueOfImage
         ? this.$store.getters.valueOfImage
         : [];
+    }
+  },
+  methods: {
+    download(url){
+      console.log(url);
+      ipcRenderer.send('download', {
+          url: url});
     }
   }
 }
