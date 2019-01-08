@@ -4,35 +4,35 @@
       "id": 1,
       "title": "lion",
       "description": "Animal Planet is outraged and heartbroken by the recent killing of Cecil the lion. The network strongly opposes the deplorable practice of trophy hunting and poaching, asserting that they devastate conservation efforts, reduce wildlife populations and weaken the populations' gene pools.",
-      "videourl": "//player.vimeo.com/video/197914397?title=0&portrait=0&byline=0&autoplay=1&loop=1",
+      "videourl": "http://techslides.com/demos/sample-videos/small.mp4",
       "imageurl": "http://r.ddmcdn.com/s_f/o_1/APL/uploads/2015/07/cecil-AP463227356214-1000x400.jpg"
     },
     {
       "id": 2,
       "title": "panda",
       "description": "Mammals are vertebrate animals that are endothermic, have hair on their bodies, and produce milk to feed their babies.",
-      "videourl": "//player.vimeo.com/video/194317668?title=0&portrait=0&byline=0&autoplay=1&loop=1",
+      "videourl": "http://techslides.com/demos/sample-videos/small.mp4",
       "imageurl": "https://animals.sandiegozoo.org/sites/default/files/2016-08/category-thumbnail-mammals_0.jpg"
     },
     {
       "id": 3,
       "title": "duck",
       "description": "The network strongly opposes the deplorable practice of trophy hunting and poaching, asserting that they devastate conservation efforts, reduce wildlife populations and weaken the populations' gene pools.",
-      "videourl": "//player.vimeo.com/video/145117191?title=0&portrait=0&byline=0&autoplay=1&loop=1",
+      "videourl": "http://techslides.com/demos/sample-videos/small.mp4",
       "imageurl": "https://animals.sandiegozoo.org/sites/default/files/2018-07/animals_hero_radjah-shelduck.jpg"
     },
     {
       "id": 4,
       "title": "horse",
       "description": "Animal Planet is outraged and heartbroken by the recent killing of Cecil the lion. The network strongly opposes the deplorable practice of trophy hunting and poaching, asserting that they devastate conservation efforts, reduce wildlife populations and weaken the populations' gene pools.",
-      "videourl": "//player.vimeo.com/video/174173914?title=0&portrait=0&byline=0&autoplay=1&loop=1",
+      "videourl": "https://www.radiantmediaplayer.com/media/bbb-360p.mp4",
       "imageurl": "https://images.pexels.com/photos/45164/mare-animal-nature-ride-45164.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
     },
     {
       "id": 5,
       "title": "deer",
       "description": "Animal Planet is outraged and heartbroken by the recent killing of Cecil the lion. The network strongly opposes the deplorable practice of trophy hunting and poaching, asserting that they devastate conservation efforts, reduce wildlife populations and weaken the populations' gene pools.",
-      "videourl": "//player.vimeo.com/video/135787911?title=0&portrait=0&byline=0&autoplay=1&loop=1",
+      "videourl": "http://techslides.com/demos/sample-videos/small.mp4",
       "imageurl": "https://images.pexels.com/photos/34231/antler-antler-carrier-fallow-deer-hirsch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     }
   ]

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-image">
     <h2>{{valueOfImage.title}}</h2>
     <div>
       <div class="col-sm-3">
@@ -28,3 +28,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.main-image{
+  padding: 30px;
+}
+</style>

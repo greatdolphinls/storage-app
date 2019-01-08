@@ -1,10 +1,14 @@
 <template>
-  <div>
+  <div class="main-video">
     <h2>{{valueOfVideo.title}}</h2>
     <div>
       <div class="col-sm-3">
-        <iframe width="420" height="315" :src="valueOfVideo.videourl">
-        </iframe>
+        <!-- <iframe width="420" height="315" :src="valueOfVideo.videourl">
+        </iframe> -->
+        <video width="400" controls>
+          <source :src="valueOfVideo.videourl" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
       </div>
       <div class="col-sm-9">
         <p>{{valueOfVideo.description}}</p>
@@ -26,3 +30,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.main-video{
+  padding: 30px;
+}
+</style>

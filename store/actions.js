@@ -44,6 +44,7 @@ export default {
         const images = this.getters.images;
         images.find(item => {
           if(item.id == payload) {
+            item.url = "http://127.0.0.1:3000/icon.png"
             commit('SET_VALUE_OF_IMAGE', item)
           }
         })
@@ -67,6 +68,7 @@ export default {
         const videos = this.getters.videos;
         videos.find(item => {
           if(item.id == payload) {
+            item.videourl = "http://127.0.0.1:3000/mov_bbb.mp4"
             commit('SET_VALUE_OF_VIDEO', item)
           }
         })

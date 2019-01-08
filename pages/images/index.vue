@@ -1,6 +1,6 @@
 <template>
   <div class="main-image">
-    <p>images</p>
+    <h2>images</h2>
     <article v-for="(image) in $store.state.images" v-bind:value="image.value" :key="image.value">
       <div class="col-sm-3">
         <span class="image">
@@ -30,6 +30,6 @@ export default {
 </script>
 <style scoped>
 .main-image{
-  padding: 10px;
+  padding: 30px;
 }
 </style>

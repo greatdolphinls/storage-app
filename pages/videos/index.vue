@@ -1,6 +1,6 @@
 <template>
   <div class="main-video">
-    <p>videos</p>
+    <h2>videos</h2>
     <article v-for="(video) in $store.state.videos" v-bind:value="video.value" :key="video.value">
       <div class="col-sm-3">
         <span class="image">
@@ -26,6 +26,6 @@ export default {
 </script>
 <style scoped>
 .main-video{
-  padding: 10px;
+  padding: 30px;
 }
 </style>
