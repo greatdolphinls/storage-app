@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "electron-storage": "^1.0.7",
+    "electron-store": "^2.0.0",
     "nuxt": "^1.4.0",
     "vue-resource": "^1.5.1"
   },

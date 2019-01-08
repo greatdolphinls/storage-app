@@ -21,8 +21,6 @@
 import axios from "axios";
 export default {
   data: () => ({
-    loader: null,
-    watching: false,
     images: null
   }),
   async fetch ({ store, params }) {

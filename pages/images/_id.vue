@@ -16,6 +16,7 @@
 <script>
 export default {
   async fetch({ store , params, route}) {
+    console.log(route.params.id);
     await store.dispatch("GET_VALUE_OF_IMAGE", route.params.id);
   },
   computed: {

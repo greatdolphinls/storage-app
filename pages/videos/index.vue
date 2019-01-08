@@ -6,7 +6,6 @@
         <span class="image">
           <img :src="video.imageurl" :width="150" alt>
         </span>
-        
       </div>
       <div class="col-sm-9">
         <nuxt-link v-bind:to="'/videos/' + video.id">

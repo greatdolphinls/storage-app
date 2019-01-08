@@ -41,6 +41,12 @@ export default {
           }
         })
       } catch (e) {
+        const images = this.getters.images;
+        images.find(item => {
+          if(item.id == payload) {
+            commit('SET_VALUE_OF_IMAGE', item)
+          }
+        })
         commit('ERROR', e)
       }
     },
@@ -58,6 +64,12 @@ export default {
           }
         })
       } catch (e) {
+        const videos = this.getters.videos;
+        videos.find(item => {
+          if(item.id == payload) {
+            commit('SET_VALUE_OF_VIDEO', item)
+          }
+        })
         commit('ERROR', e)
       }
     }
