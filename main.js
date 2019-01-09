@@ -19,26 +19,26 @@ if (config.dev) {
 // Listen the server
 server.listen()
 const _NUXT_URL_ = `http://localhost:${server.address().port}`
+
 console.log(`Nuxt working on ${_NUXT_URL_}`)
 
 /*
 ** Electron
 */
-const {app, BrowserWindow, ipcMain} = require('electron');
+const {app, BrowserWindow, ipcMain, protocol} = require('electron');
 const {download} = require('electron-dl');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
-
+const userPath = app.getPath('userData');
+const dirPath =  path.join(userPath, 'files');
 ipcMain.on('download', (event, arg) => {
-	const dirPath = path.join(__dirname, 'server/files');
 	fileUrl = arg.url;
   try {
     fs.mkdirSync(dirPath);
   } catch (e) {
     console.log("path already exists");
   }
-  
 	const opts = {
     saveAs: false,
     directory: dirPath,
@@ -62,14 +62,11 @@ ipcMain.on('download', (event, arg) => {
 })
 
 let win = null // Current window
-// const electron = require('electron')
-// const path = require('path')
-// const app = electron.app
-
 const newWin = () => {
 	win = new BrowserWindow({
-		icon: path.join(__dirname, 'static/icon.png')
+		icon: path.join(__dirname, 'static/icon.png'),
 	})
+
 	win.maximize()
 	win.on('closed', () => win = null)
 	if (config.dev) {
@@ -87,6 +84,14 @@ const newWin = () => {
 		}
 		pollServer()
 	} else { return win.loadURL(_NUXT_URL_) }
+
+	protocol.registerFileProtocol('atom', function(request, callback) {
+		var url = request.url.substr(7);
+		callback({path: path.normalize(dirPath + '/' + url)});
+	}, function (error) {
+		if (error)
+			console.error('Failed to register protocol')
+	});
 }
 app.on('ready', newWin)
 app.on('window-all-closed', () => app.quit())

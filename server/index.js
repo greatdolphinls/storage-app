@@ -22,7 +22,7 @@
 
 // expressApp.use('/', router)
 
-// http.createServer(expressApp).listen(8000)
+http.createServer(expressApp).listen(8000)
 
 var express = require('express');
 var app = express();
